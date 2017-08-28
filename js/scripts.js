@@ -3,9 +3,10 @@
 
 contacts = [];
 
-function Contact(first, last){
+function Contact(first, last, number){
   this.firstName = first;
   this.lastName = last;
+  this.number = number;
   this.addresses = [];
 }
 function Address(street1, city1, state1){
@@ -20,49 +21,36 @@ Address.prototype.fullAddress = function () {
   return this.street+", " + this.city+ ", "+this.state;
 }
 function resetFields(){
-  $("input#new-first-name").val("");
-  $("input#new-last-name").val("");
-  $("input.new-street").val("");
-  $("input.new-city").val("");
-  $("input.new-state").val("");
+  $("input#firstName").val("");
+  $("input#lastName").val("");
+  $("input.street").val("");
+  $("input.city").val("");
+  $("input.state").val("");
 }
 /////FRONT END
 $(document).ready(function() {
-  $("#new-contact").submit(function(event) {
+  $("#signUpForm").submit(function(event) {
     event.preventDefault();
-    $(".added").remove();
 
-    var firstNameInputted = $("#new-first-name").val();
-    var lastNameInputted = $("#new-last-name").val();
+    var firstNameInputted = $("#firstName").val();
+    var lastNameInputted = $("#lastName").val();
+    var phoneNumberInputted = $("#phoneNumber").val();
 
-    var newContact = new Contact(firstNameInputted, lastNameInputted);
-
+    var newContact = new Contact(firstNameInputted, lastNameInputted, phoneNumberInputted);
 
     $(".new-address").each(function (){
-      var streetInputted = $(this).find(".new-street").val();
-      var cityInputted = $(this).find(".new-city").val();
-      var stateInputted = $(this).find(".new-state").val();
+      var streetInputted = $("#street").val();
+      var cityInputted = $("#city").val();
+      var stateInputted = $("#state").val();
       var newAddress = new Address(streetInputted, cityInputted, stateInputted);
+
       newContact.addresses.push(newAddress);
+      contacts.push(newContact);
+
+      $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
+      resetFields();
+      console.log(contacts)
+      console.log(newContact);
     });
-    // contacts.push(newContact)
-    // localStorage.setItem(contacts);
-    // console.log(contacts)
-
-    $("ul#contacts").append("<li><span class='contact'>" + newContact.firstAndLast() + "</span></li>");
-
-
-    $(".contact").last().click(function() {
-      $("#show-contact").show();
-      $("#show-contact h2").text(newContact.firstName);
-      $(".first-name").text(newContact.firstName);
-      $(".last-name").text(newContact.lastName);
-      $("#addresses").text("");
-        newContact.addresses.forEach(function(address){
-          $("#addresses").append("<li>" + address.fullAddress()+ "</li>" );
-        });
-    });
-    resetFields();
-
   });
 });
