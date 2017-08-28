@@ -1,7 +1,7 @@
 
 ///BACK END
-
-contacts = [];
+var bar = 0
+var contacts = [];
 
 function Contact(first, last, number){
   this.firstName = first;
@@ -28,30 +28,29 @@ function resetFields(){
   $("input#city").val("");
   $("input#state").val("");
 }
+function progressBar(){
+  $(".updatedBar").html('<div class="progress">' +
+  '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + bar + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
+  '</div>')
+  if (bar > 99){
+    $(".updatedBar").html('<div class="progress">' +
+    '<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 100%; height: 30px;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">FULL BUSS. LESSSSS GOOOOOO</div>' +
+    '</div>')
+    $(".fire").show();
+  }
+  bar += (100/12)
+}
+
 /////FRONT END
 $(document).ready(function() {
-var bar = 0
+
   $("#signUpForm").submit(function(event) {
     event.preventDefault();
 
     var firstNameInputted = $("#firstName").val();
     var lastNameInputted = $("#lastName").val();
     var phoneNumberInputted = $("#phoneNumber").val();
-
-    bar += (100/12)
-
-    $(".updatedBar").html('<div class="progress">' +
-    '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + bar + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
-    '</div>')
-
-
-    if (bar > 99){
-      $(".updatedBar").html('<div class="progress">' +
-      '<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 100%; height: 30px;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">FULL BUSS. LESSSSS GOOOOOO</div>' +
-      '</div>')
-      $(".fire").show();
-    }
-    console.log(bar)
+    var weekendInputted = $("#weekendInput").val();
 
 
     var newContact = new Contact(firstNameInputted, lastNameInputted, phoneNumberInputted);
@@ -67,7 +66,10 @@ var bar = 0
 
 
 
+
+
       $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
+      progressBar();
       resetFields();
       console.log(contacts)
     });
