@@ -40,10 +40,16 @@ var bar = 0
 
     bar += (100/12)
 
-    $(".updatedBar").html('<div class="progress-bar" role="progressbar" style="width: ' + bar + '%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>')
+    $(".updatedBar").html('<div class="progress">' +
+    '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + bar + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
+    '</div>')
+
 
     if (bar > 99){
-      $(".updatedBar").html('<div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">FULL BUSS!</div>')
+      $(".updatedBar").html('<div class="progress">' +
+      '<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 100%; height: 30px;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">FULL BUSS. LESSSSS GOOOOOO</div>' +
+      '</div>')
+      $(".fire").show();
     }
     console.log(bar)
 
