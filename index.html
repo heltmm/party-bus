@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <title>Snow Bus</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+    <br><br>
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-md-2">
+          <h2>Bus Meter</h2>
+          <div id="busMeter">
+          </div>
+        </div>
+        <div class="col-md-10">
+          <h1>Meadows Snow Bus</h1>
+        </div>
+
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="well">
+            <h3>About</h3>
+            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+          </div>
+          <div class="well">
+            <h3>Current Trips</h3>
+            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,"</p>
+          </div>
+          <div class="well">
+            <h3>Bus Meter</h3>
+            <div class="updatedBar">
+            </div>
+            <span id="fire"></span>
+
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <h3>Sign Up!</h3>
+            <form class="form-group" id="signUpForm">
+              <select class="form-control" id="weekendInput">
+                <option value="11/22">Weekend of 11/22</option>
+                <option value="12/12">Weekend of 12/12</option>
+                <option value="1/4">Weekend of 1/4</option>
+                <option value="1/22">Weekend of 1/22</option>
+              </select>
+              <label for="firstName">First Name</label><br>
+              <input id="firstName" type="text"><br>
+              <label for="lastName">Last Name</label><br>
+              <input id="lastName" type="text"><br>
+              <label for="phoneNumber">Phone Number</label><br>
+              <input id="phoneNumber" type="text"><br>
+              <div class="new-address">
+                <label for="street">Street</label><br>
+                <input id="street" type="text"><br>
+                <label for="city">City</label><br>
+                <input id="city" type="text"><br>
+                <label for="state">State</label><br>
+                <input id="state" type="text"><br>
+              </div>
+              <button id="submitAddress" class="btn btn-success" type="submit">Sign Up!</button>
+            </form>
+
+            <div class="row">
+              <div class="span12">
+                <form class="form-horizontal span6">
+                  <fieldset>
+                    <legend>Payment</legend>
+
+                    <div class="control-group">
+                      <label class="control-label">Card Holder's Name</label>
+                      <div class="controls">
+                        <input type="text" class="input-block-level" pattern="\w+ \w+.*" title="Fill your first and last name" required>
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Card Number</label>
+                      <div class="controls">
+                        <div class="row-fluid">
+                          <div class="span3">
+                            <input type="text" class="input-block-level" autocomplete="off" maxlength="4" pattern="\d{4}" title="First four digits" required>
+                          </div>
+                          <div class="span3">
+                            <input type="text" class="input-block-level" autocomplete="off" maxlength="4" pattern="\d{4}" title="Second four digits" required>
+                          </div>
+                          <div class="span3">
+                            <input type="text" class="input-block-level" autocomplete="off" maxlength="4" pattern="\d{4}" title="Third four digits" required>
+                          </div>
+                          <div class="span3">
+                            <input type="text" class="input-block-level" autocomplete="off" maxlength="4" pattern="\d{4}" title="Fourth four digits" required>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Card Expiry Date</label>
+                      <div class="controls">
+                        <div class="row-fluid">
+                          <div class="span9">
+                            <select class="input-block-level">
+                              <option>January</option>
+                              <option>...</option>
+                              <option>December</option>
+                            </select>
+                          </div>
+                          <div class="span3">
+                            <select class="input-block-level">
+                              <option>2013</option>
+                              <option>...</option>
+                              <option>2015</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Card CVV</label>
+                      <div class="controls">
+                        <div class="row-fluid">
+                          <div class="span3">
+                            <input type="text" class="input-block-level" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required>
+                          </div>
+                          <div class="span8">
+                            <!-- screenshot may be here -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-actions">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="button" class="btn">Cancel</button>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
