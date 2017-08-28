@@ -23,9 +23,10 @@ Address.prototype.fullAddress = function () {
 function resetFields(){
   $("input#firstName").val("");
   $("input#lastName").val("");
-  $("input.street").val("");
-  $("input.city").val("");
-  $("input.state").val("");
+  $("input#phoneNumber").val("");
+  $("input#street").val("");
+  $("input#city").val("");
+  $("input#state").val("");
 }
 /////FRONT END
 $(document).ready(function() {
@@ -50,7 +51,6 @@ $(document).ready(function() {
       $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
       resetFields();
       console.log(contacts)
-      console.log(newContact);
     });
   });
 });
