@@ -18,6 +18,8 @@ body {
 .contact:hover {
   text-decoration: underline;
 }
-.fire {
-  display: none;
+#inAline p {
+
+  text-align: center;
+
 }
