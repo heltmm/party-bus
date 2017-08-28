@@ -1,7 +1,20 @@
+
 body {
   background: linear-gradient(to right, #00d2ff, #928dab);
 }
 
 .container-fluid {
   /*text-align: center;*/
+
+#show-contact {
+  display: none;
+}
+
+.contact {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.contact:hover {
+  text-decoration: underline;
 }
