@@ -55,7 +55,18 @@ function weekendDisplay(weekendInputted){
     $("#trip-info h3").text("Mt Hood - November 22 - November 24");
     $("#trip-info p").text("We are hitting Mt Hood on November 22nd. Tag along for a great time.");
     $("#trip-info").show();
-
+  } else if (weekendInputted === "12/12") {
+    $("#trip-info h3").text("Mt Hood - December 12 - December 14");
+    $("#trip-info p").text("We are hitting Mt Hood on November 22nd. Tag along for a great time.");
+    $("#trip-info").show();
+  } else if (weekendInputted === "1/4") {
+    $("#trip-info h3").text("Mt Hood - January 1 - January 3");
+    $("#trip-info p").text("We are hitting Mt Hood on November 22nd. Tag along for a great time.");
+    $("#trip-info").show();
+  } else if (weekendInputted === "1/22") {
+    $("#trip-info h3").text("Mt Hood - January 22 - January 24");
+    $("#trip-info p").text("We are hitting Mt Hood on November 22nd. Tag along for a great time.");
+    $("#trip-info").show();
   } return;
 }
 
