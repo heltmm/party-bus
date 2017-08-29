@@ -52,8 +52,10 @@ function sendMail() {
 }
 function weekendDisplay(weekendInputted){
   if (weekendInputted === "11/22") {
-    alert("11/22 Selected");
+    $("#trip-info h3").text("Mt Hood - November 22 - November 24");
+    $("#trip-info p").text("We are hitting Mt Hood on November 22nd. Tag along for a great time.");
     $("#trip-info").show();
+
   } return;
 }
 
@@ -65,7 +67,6 @@ $(document).ready(function() {
     var firstNameInputted = $("#firstName").val();
     var lastNameInputted = $("#lastName").val();
     var weekendInputted = $("#weekendInput").val();
-    weekendDisplay(weekendInputted);
     var phoneNumber = parseInt($("#phoneNumber").val());
     var carrier = $("#carrier").val();
     var newContact = new Contact(firstNameInputted, lastNameInputted, weekendInputted, phoneNumber, carrier);
@@ -91,5 +92,10 @@ $(document).ready(function() {
       resetFields();
       //sendMail();
     });
+  });
+  $("#weekendInput").change(function(){
+
+    var weekendInputted = $("#weekendInput").val();
+    weekendDisplay(weekendInputted);
   });
 });
