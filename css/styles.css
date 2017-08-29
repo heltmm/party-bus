@@ -1,9 +1,34 @@
 
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+.container-fluid {
+  /*text-align: center;*/
 }
-h2{
+
+#show-contact {
+  display: none;
+}
+
+.contact {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.contact:hover {
+  text-decoration: underline;
+}
+
+#inAline p {
   text-align: center;
+}
+
+#map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+}
+#trip-info {
+  display: none;
+}
+  
+.widgetBorder {
+  border: solid 2px black;
 }

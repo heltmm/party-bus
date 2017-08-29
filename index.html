@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-    </head>
-    <body>
-      <div class="slideshow-container">
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <title>Snow Bus</title>
+  </head>
+  <body>
+    <div class="slideshow-container">
       <div class="mySlides fade">
         <img src="images/image1.jpg" style="width:50%">
       </div>
@@ -13,6 +19,103 @@
       <div class="mySlides fade">
         <img src="images/image3.jpg" style="width:50%">
       </div>
+    <div class="container-fluid">
+    <br><br>
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-md-2">
+          <h2>Bus Meter</h2>
+          <div id="busMeter">
+          </div>
+        </div>
+        <div class="col-md-10">
+          <h1>Meadows Snow Bus</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="well">
+          <h3>About</h3>
+          <p>Cupim kevin salami ham, venison short loin meatball corned beef biltong pork sausage jowl chuck jerky doner. Fatback meatball picanha pancetta hamburger pork belly. Ball tip tail venison cow frankfurter landjaeger sausage ribeye short ribs. Burgdoggen ball tip swine pig brisket. Rump porchetta sausage chicken, bresaola tail meatball pork belly turducken pork shankle burgdoggen.</p>
+        </div>
+        <div class="well" id="trip-info">
+          <h3></h3>
+          <p></p>
+        </div>
+        <div class="well">
+          <h3>Bus Meter</h3>
+          <div class="updatedBar">
+          </div>
+          <span id="fire"></span>
+
+        </div>
+        <h3>Mt.Hood Meadows</h3>
+        <div id="map"></div>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I&callback=initMap">
+        </script>
+      </div>
+      <div class="col-sm-4">
+        <div class="well">
+          <!--Weather Widget-->
+          <link href="//www.snow-forecast.com/stylesheets/feed.css" media="screen" rel="stylesheet" type="text/css" /><div id="wf-weatherfeed"><iframe style="overflow:hidden;border:none;" allowtransparency="true" height="272" width="469" src="//www.snow-forecast.com/resorts/Mt-Hood-Meadows/forecasts/feed/mid/i" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"><p>Your browser does not support iframes.</p></iframe><div id="wf-link"><a href="http://www.snow-forecast.com/"><img alt="Snow Forecast" src="//www.snow-forecast.com/images/feed/snowlogo-150.png"/></a><p id="cmt">View detailed snow forecast for <a href="http://www.snow-forecast.com/resorts/Mt-Hood-Meadows/6day/mid">Mt Hood Meadows</a> at:<br /><a href="http://www.snow-forecast.com/"><strong>snow-forecast.com</strong></a></p><div style="clear: both;"></div></div></div>
+          <h3>Sign Up!</h3>
+          <form class="form-group" id="signUpForm">
+
+            <select class="form-control" id="weekendInput">
+              <option value="0">Select A Date</option>
+              <option value="11/22">Weekend of 11/22</option>
+              <option value="12/12">Weekend of 12/12</option>
+              <option value="1/4">Weekend of 1/4</option>
+              <option value="1/22">Weekend of 1/22</option>
+            </select>
+
+            <label for="firstName">First Name</label><br>
+            <input id="firstName" type="text"><br>
+
+            <label for="lastName">Last Name</label><br>
+            <input id="lastName" type="text"><br>
+
+            <div class="new-address">
+              <label for="street">Street</label><br>
+              <input id="street" type="text"><br>
+              <label for="city">City</label><br>
+              <input id="city" type="text"><br>
+              <label for="state">State</label><br>
+              <input id="state" type="text"><br>
+            </div>
+
+            <label for="phoneNumber">Phone Number</label><br>
+            <input id="phoneNumber" type="number"><br><br>
+
+            <label for="carrier">Carrier</label><br>
+              <select id="carrier" name="Carrier">
+                <option value="@txt.att.net">AT&T</option>
+                <option value="@vtext.com">Verizon</option>
+                <option value="@messaging.sprintpcs.com">Sprint</option>
+                <option value="@tmomail.net">T-Mobile</option>
+              </select><br><br>
+
+            <button id="submitAddress" class="btn btn-success" type="submit">Sign Up!</button>
+          </form>
+
+          <div class="row">
+            <form action="/your-server-side-code" method="POST">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+              data-amount="999"
+              data-name="Stripe.com"
+              data-description="Widget"
+              data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+              data-locale="auto"
+              data-zip-code="true">
+            </script>
+          </form>
+          </div>
+        </div>
+
       </div>
       <script>
         var slideIndex = 0;
@@ -29,6 +132,8 @@
             slides[slideIndex-1].style.display = "block";
             setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
+      
       </script>
+     
     </body>
   </html>
