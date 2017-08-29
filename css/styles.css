@@ -21,5 +21,9 @@ body {
 #inAline p {
 
   text-align: center;
-
+}
+#map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
 }

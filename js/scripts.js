@@ -1,7 +1,21 @@
 
 ///BACK END
-var bar = 0
+var count = 1
 var contacts = [];
+
+//intializes google maps
+function initMap() {
+  var meadows = {lat: 45.333067, lng: -121.655631};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+   zoom: 10,
+   center: meadows
+  });
+  var marker = new google.maps.Marker({
+   position: meadows,
+   map: map
+  });
+}
 
 function Contact(first, last, weekend, number, carrier){
   this.firstName = first;
@@ -31,16 +45,17 @@ function resetFields(){
   $("input#state").val("");
 }
 function progressBar(){
+  var progress = count * (100/12)
   $(".updatedBar").html('<div class="progress">' +
-  '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + bar + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
+  '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + progress + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
   '</div>')
-  if (bar > 99){
+  if (count > 11){
     $(".updatedBar").html('<div class="progress">' +
     '<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 100%; height: 30px;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">FULL BUSS. LESSSSS GOOOOOO</div>' +
     '</div>')
     $("#fire").html('<div id="inALine"><p><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""></p></div>')
   }
-  bar += (100/12)
+  count ++
 }
 var phoneNumber = parseInt($("#phoneNumber").val());
 var carrier;
