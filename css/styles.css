@@ -5,6 +5,7 @@ body {
 
 .container-fluid {
   /*text-align: center;*/
+}
 
 #show-contact {
   display: none;
@@ -18,8 +19,11 @@ body {
 .contact:hover {
   text-decoration: underline;
 }
+
 #inAline p {
-
   text-align: center;
+}
 
+#trip-info {
+  display: none;
 }
