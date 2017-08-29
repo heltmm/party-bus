@@ -27,3 +27,7 @@ body {
 #trip-info {
   display: none;
 }
+
+.widgetBorder {
+  border: solid 2px black;
+}
