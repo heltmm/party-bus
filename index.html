@@ -9,16 +9,8 @@
     <title>Snow Bus</title>
   </head>
   <body>
-    <div class="slideshow-container">
-      <div class="mySlides fade">
-        <img src="images/image1.jpg" style="width:50%">
-      </div>
-      <div class="mySlides fade">
-        <img src="images/image2.jpg" style="width:50%">
-      </div>
-      <div class="mySlides fade">
-        <img src="images/image3.jpg" style="width:50%">
-      </div>
+
+
     <div class="container-fluid">
     <br><br>
     <div class="jumbotron">
@@ -35,6 +27,17 @@
     </div>
     <div class="row">
       <div class="col-sm-8">
+        <div class="slideshow-container">
+          <div class="mySlides">
+            <img src="images/image1.jpg">
+          </div>
+          <div class="mySlides">
+            <img src="images/image2.jpg">
+          </div>
+          <div class="mySlides">
+            <img src="images/image3.jpg" >
+          </div>
+        </div>
         <div class="well">
           <h3>About</h3>
           <p>Cupim kevin salami ham, venison short loin meatball corned beef biltong pork sausage jowl chuck jerky doner. Fatback meatball picanha pancetta hamburger pork belly. Ball tip tail venison cow frankfurter landjaeger sausage ribeye short ribs. Burgdoggen ball tip swine pig brisket. Rump porchetta sausage chicken, bresaola tail meatball pork belly turducken pork shankle burgdoggen.</p>
@@ -58,7 +61,7 @@
       </div>
       <div class="col-sm-4">
         <div class="well">
-          <!--Weather Widget-->
+          <!-- Weather Widget -->
           <link href="//www.snow-forecast.com/stylesheets/feed.css" media="screen" rel="stylesheet" type="text/css" /><div id="wf-weatherfeed"><iframe style="overflow:hidden;border:none;" allowtransparency="true" height="272" width="469" src="//www.snow-forecast.com/resorts/Mt-Hood-Meadows/forecasts/feed/mid/i" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"><p>Your browser does not support iframes.</p></iframe><div id="wf-link"><a href="http://www.snow-forecast.com/"><img alt="Snow Forecast" src="//www.snow-forecast.com/images/feed/snowlogo-150.png"/></a><p id="cmt">View detailed snow forecast for <a href="http://www.snow-forecast.com/resorts/Mt-Hood-Meadows/6day/mid">Mt Hood Meadows</a> at:<br /><a href="http://www.snow-forecast.com/"><strong>snow-forecast.com</strong></a></p><div style="clear: both;"></div></div></div>
           <h3>Sign Up!</h3>
           <form class="form-group" id="signUpForm">
@@ -117,23 +120,7 @@
         </div>
 
       </div>
-      <script>
-        var slideIndex = 0;
-        showSlides();
 
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-               slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex> slides.length) {slideIndex = 1}
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
-        }
-      
-      </script>
-     
+
     </body>
   </html>

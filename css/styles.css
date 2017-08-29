@@ -1,4 +1,8 @@
 
+body {
+  background: linear-gradient(to right, #00d2ff, #928dab);
+}
+
 .container-fluid {
   /*text-align: center;*/
 }
@@ -28,7 +32,10 @@
 #trip-info {
   display: none;
 }
-  
+
 .widgetBorder {
   border: solid 2px black;
+}
+img {
+  width: 100%;
 }
