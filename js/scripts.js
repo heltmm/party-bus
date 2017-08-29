@@ -3,10 +3,12 @@
 var bar = 0
 var contacts = [];
 
-function Contact(first, last, number){
+function Contact(first, last, weekend, number, carrier){
   this.firstName = first;
   this.lastName = last;
+  this.weekend = weekend;
   this.number = number;
+  this.carrier = carrier;
   this.addresses = [];
 }
 function Address(street1, city1, state1){
@@ -40,20 +42,28 @@ function progressBar(){
   }
   bar += (100/12)
 }
+var phoneNumber = parseInt($("#phoneNumber").val());
+var carrier;
+var message;
+var name;
+var email = phoneNumber + carrier;
+function sendMail() {
+  window.location.href = 'mailto:' + email + '?subject=Ski Confirmation' + '&body=' + message;
+}
 
 /////FRONT END
 $(document).ready(function() {
-
   $("#signUpForm").submit(function(event) {
     event.preventDefault();
 
     var firstNameInputted = $("#firstName").val();
     var lastNameInputted = $("#lastName").val();
-    var phoneNumberInputted = $("#phoneNumber").val();
     var weekendInputted = $("#weekendInput").val();
-
-
-    var newContact = new Contact(firstNameInputted, lastNameInputted, phoneNumberInputted);
+    var phoneNumber = parseInt($("#phoneNumber").val());
+    var carrier = $("#carrier").val();
+    var newContact = new Contact(firstNameInputted, lastNameInputted, weekendInputted, phoneNumber, carrier);
+    alert(carrier)
+    console.log(newContact);
 
     $(".new-address").each(function (){
       var streetInputted = $("#street").val();
@@ -64,15 +74,18 @@ $(document).ready(function() {
       newContact.addresses.push(newAddress);
       contacts.push(newContact);
 
-
-
+      message = "Your Ski Trip Has Been Confirmed";
+      name = "Dan";
+      email = phoneNumber + carrier;
 
 
       $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
       progressBar();
       resetFields();
-      console.log(contacts)
+      //sendMail();
+
     });
+
   });
 
 });
