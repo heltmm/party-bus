@@ -27,3 +27,7 @@ body {
         height: 400px;
         background-color: grey;
 }
+
+.widgetBorder {
+  border: solid 2px black;
+}
