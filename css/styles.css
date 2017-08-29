@@ -6,6 +6,7 @@ body {
 .container-fluid {
   /*text-align: center;*/
 }
+
 #show-contact {
   display: none;
 }
@@ -18,16 +19,20 @@ body {
 .contact:hover {
   text-decoration: underline;
 }
-#inAline p {
 
+#inAline p {
   text-align: center;
 }
+
 #map {
         width: 100%;
         height: 400px;
         background-color: grey;
 }
-
+#trip-info {
+  display: none;
+}
+  
 .widgetBorder {
   border: solid 2px black;
 }

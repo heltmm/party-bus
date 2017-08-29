@@ -1,6 +1,8 @@
 
 ///BACK END
+
 var count = 1
+
 var contacts = [];
 
 //intializes google maps
@@ -32,10 +34,10 @@ function Address(street1, city1, state1){
 }
 Contact.prototype.firstAndLast = function () {
   return this.firstName + " "+this.lastName;
-}
+};
 Address.prototype.fullAddress = function () {
   return this.street+", " + this.city+ ", "+this.state;
-}
+};
 function resetFields(){
   $("input#firstName").val("");
   $("input#lastName").val("");
@@ -47,17 +49,27 @@ function resetFields(){
 function progressBar(){
   var progress = count * (100/12)
   $(".updatedBar").html('<div class="progress">' +
+
   '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + progress + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
   '</div>')
   if (count > 11){
+
+  '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + bar + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
+  '</div>');
+  if (bar > 99){
+
     $(".updatedBar").html('<div class="progress">' +
     '<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 100%; height: 30px;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">FULL BUSS. LESSSSS GOOOOOO</div>' +
-    '</div>')
-    $("#fire").html('<div id="inALine"><p><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""></p></div>')
+    '</div>');
+    $("#fire").html('<div id="inALine"><p><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""></p></div>');
   }
+
   count ++
+
+  bar += (100/12);
+
 }
-var phoneNumber = parseInt($("#phoneNumber").val());
+var phoneNumber;
 var carrier;
 var message;
 var name;
@@ -65,20 +77,37 @@ var email = phoneNumber + carrier;
 function sendMail() {
   window.location.href = 'mailto:' + email + '?subject=Ski Confirmation' + '&body=' + message;
 }
+function weekendDisplay(weekendInputted){
+  if (weekendInputted === "11/22") {
+    $("#trip-info h3").text("Mt Hood - November 22 - November 24");
+    $("#trip-info p").text("We are hitting Mt Hood on November 22nd. Tag along for a great time.");
+    $("#trip-info").show();
+  } else if (weekendInputted === "12/12") {
+    $("#trip-info h3").text("Mt Hood - December 12 - December 14");
+    $("#trip-info p").text("We are hitting Mt Hood on November 22nd. Tag along for a great time.");
+    $("#trip-info").show();
+  } else if (weekendInputted === "1/4") {
+    $("#trip-info h3").text("Mt Hood - January 1 - January 3");
+    $("#trip-info p").text("We are hitting Mt Hood on November 22nd. Tag along for a great time.");
+    $("#trip-info").show();
+  } else if (weekendInputted === "1/22") {
+    $("#trip-info h3").text("Mt Hood - January 22 - January 24");
+    $("#trip-info p").text("We are hitting Mt Hood on November 22nd. Tag along for a great time.");
+    $("#trip-info").show();
+  } return;
+}
 
 /////FRONT END
 $(document).ready(function() {
   $("#signUpForm").submit(function(event) {
     event.preventDefault();
     if(count <= 12){
-
       var firstNameInputted = $("#firstName").val();
       var lastNameInputted = $("#lastName").val();
       var weekendInputted = $("#weekendInput").val();
       var phoneNumber = parseInt($("#phoneNumber").val());
       var carrier = $("#carrier").val();
       var newContact = new Contact(firstNameInputted, lastNameInputted, weekendInputted, phoneNumber, carrier);
-
 
       $(".new-address").each(function (){
         var streetInputted = $("#street").val();
@@ -102,4 +131,17 @@ $(document).ready(function() {
       alert("Bus Is Full!")
     }
   });
+
+      $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
+      progressBar();
+      resetFields();
+      //sendMail();
+    });
+  });
+  $("#weekendInput").change(function(){
+
+    var weekendInputted = $("#weekendInput").val();
+    weekendDisplay(weekendInputted);
+  });
+
 });
