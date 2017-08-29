@@ -1,7 +1,7 @@
 
 ///BACK END
 
-var count = 1
+var count = 1;
 
 var contacts = [];
 
@@ -47,27 +47,17 @@ function resetFields(){
   $("input#state").val("");
 }
 function progressBar(){
-  var progress = count * (100/12)
+  var progress = count * (100/12);
   $(".updatedBar").html('<div class="progress">' +
 
   '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + progress + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
-  '</div>')
-  if (count > 11){
-
-  '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + bar + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
   '</div>');
-  if (bar > 99){
-
+  if (count > 11){
     $(".updatedBar").html('<div class="progress">' +
-    '<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 100%; height: 30px;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">FULL BUSS. LESSSSS GOOOOOO</div>' +
-    '</div>');
-    $("#fire").html('<div id="inALine"><p><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""></p></div>');
+    '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
+  '</div>');
   }
-
-  count ++
-
-  bar += (100/12);
-
+  count ++;
 }
 var phoneNumber;
 var carrier;
@@ -128,15 +118,8 @@ $(document).ready(function() {
         //sendMail();
       });
     }else if(count > 12){
-      alert("Bus Is Full!")
+      alert("Bus Is Full!");
     }
-  });
-
-      $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
-      progressBar();
-      resetFields();
-      //sendMail();
-    });
   });
   $("#weekendInput").change(function(){
 
