@@ -23,3 +23,7 @@ body {
   text-align: center;
 
 }
+
+.widgetBorder {
+  border: solid 2px black;
+}
