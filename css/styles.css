@@ -24,10 +24,15 @@ body {
   text-align: center;
 }
 
+#map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+}
 #trip-info {
   display: none;
 }
-
+  
 .widgetBorder {
   border: solid 2px black;
 }
