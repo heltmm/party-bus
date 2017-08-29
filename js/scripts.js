@@ -70,37 +70,36 @@ function sendMail() {
 $(document).ready(function() {
   $("#signUpForm").submit(function(event) {
     event.preventDefault();
+    if(count <= 12){
 
-    var firstNameInputted = $("#firstName").val();
-    var lastNameInputted = $("#lastName").val();
-    var weekendInputted = $("#weekendInput").val();
-    var phoneNumber = parseInt($("#phoneNumber").val());
-    var carrier = $("#carrier").val();
-    var newContact = new Contact(firstNameInputted, lastNameInputted, weekendInputted, phoneNumber, carrier);
-    alert(carrier)
-    console.log(newContact);
-
-    $(".new-address").each(function (){
-      var streetInputted = $("#street").val();
-      var cityInputted = $("#city").val();
-      var stateInputted = $("#state").val();
-      var newAddress = new Address(streetInputted, cityInputted, stateInputted);
-
-      newContact.addresses.push(newAddress);
-      contacts.push(newContact);
-
-      message = "Your Ski Trip Has Been Confirmed";
-      name = "Dan";
-      email = phoneNumber + carrier;
+      var firstNameInputted = $("#firstName").val();
+      var lastNameInputted = $("#lastName").val();
+      var weekendInputted = $("#weekendInput").val();
+      var phoneNumber = parseInt($("#phoneNumber").val());
+      var carrier = $("#carrier").val();
+      var newContact = new Contact(firstNameInputted, lastNameInputted, weekendInputted, phoneNumber, carrier);
 
 
-      $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
-      progressBar();
-      resetFields();
-      //sendMail();
+      $(".new-address").each(function (){
+        var streetInputted = $("#street").val();
+        var cityInputted = $("#city").val();
+        var stateInputted = $("#state").val();
+        var newAddress = new Address(streetInputted, cityInputted, stateInputted);
 
-    });
+        newContact.addresses.push(newAddress);
+        contacts.push(newContact);
 
+        message = "Your Ski Trip Has Been Confirmed";
+        name = "Dan";
+        email = phoneNumber + carrier;
+
+        $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
+        progressBar();
+        resetFields();
+        //sendMail();
+      });
+    }else if(count > 12){
+      alert("Bus Is Full!")
+    }
   });
-
 });
