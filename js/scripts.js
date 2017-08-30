@@ -81,8 +81,9 @@ function progressBar(){
 var phoneNumber;
 var carrier;
 var message;
-var name;
+
 var email = phoneNumber + carrier;
+
 function sendMail() {
   window.location.href = 'mailto:' + email + '?subject=Ski Confirmation' + '&body=' + message;
 }
@@ -108,6 +109,10 @@ function weekendDisplay(weekendInputted){
 
 /////FRONT END
 $(document).ready(function() {
+  $('.carousel').carousel({
+      interval: 2500
+    });
+
   $("#signUpForm").submit(function(event) {
     event.preventDefault();
     if(count <= 12){
@@ -127,14 +132,14 @@ $(document).ready(function() {
         newContact.addresses.push(newAddress);
         contacts.push(newContact);
 
-        message = "Your Ski Trip Has Been Confirmed";
-        name = "Dan";
+        var message = firstNameInputted + " your Ski Trip Has Been Confirmed";
+
         email = phoneNumber + carrier;
 
         $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
         progressBar();
         resetFields();
-        //sendMail();
+        sendMail();
         $("#busGuest").append("<div class='well'>"+ newContact.guestWell() + "</div>")
       });
     }else if(count > 12){
@@ -146,25 +151,5 @@ $(document).ready(function() {
     var weekendInputted = $("#weekendInput").val();
     weekendDisplay(weekendInputted);
   });
-  $(document).ready(function(){
-    var slideIndex = 0;
-    showSlides();
 
-    function showSlides() {
-        var i;
-        console.log(slideIndex)
-        var slides = document.getElementsByClassName("mySlides");
-        console.log(slides)
-        console.log(slides.length)
-        for (i = 0; i < slides.length; i++) {
-           slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex> slides.length) {slideIndex = 1;
-        }
-        slides[slideIndex-1].style.display = "block";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-
-  });
 });

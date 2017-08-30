@@ -121,3 +121,9 @@ h3 {
 #navBar {
   background: white;
 }
+.carousel img {
+  height: 50vh;
+  width: 100%;
+  object-fit: cover;
+
+}
