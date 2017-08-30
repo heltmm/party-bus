@@ -97,7 +97,7 @@ h3 {
 }
 .navbar {
   margin: 30px;
-  background: none;
+  background: white;
   border: none;
   font-family: courier;
 
@@ -116,5 +116,8 @@ h3 {
   font-family: courier;
   text-align: center;
   font-size: 60px;
-  margin-top: 30px;
+  padding-top: 30px;
+}
+#navBar {
+  background: white;
 }
