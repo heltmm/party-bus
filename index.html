@@ -122,7 +122,14 @@
 
     <div class="bgimg-1" id="sineupPage">
       <div class="caption">
+
         <div class="border">
+          <div class="well">
+            <h3>Bus Meter</h3>
+            <div class="updatedBar">
+            </div>
+            <span id="fire"></span>
+          </div>
           <h2>Sign Up:</h2>
           <div id="signUp">
             <form class="form-group" id="signUpForm">
@@ -140,14 +147,28 @@
               <label for="lastName">Last Name</label><br>
               <input id="lastName" type="text"><br>
 
-              <div class="new-address">
-                <label for="street">Street</label><br>
-                <input id="street" type="text"><br>
-                <label for="city">City</label><br>
-                <input id="city" type="text"><br>
-                <label for="state">State</label><br>
-                <input id="state" type="text"><br>
+
+              <label for="activity">Ski/Snowboard</label><br>
+              <input id="activity" type="text"><br>
+
+              <div class="radio">
+                <label class="inline-radio">
+                  <input type="radio" name="gender" value="male" checked>
+                  <img class="thumb" src="images/malethumb.png" alt="male">
+                </label>
+
+                <label class="inline-radio">
+                  <input type="radio" name="gender" value="female">
+                  <img class="thumb" src="images/femalethumb.png" alt="female">
+                </label>
+
+                <label class="inline-radio thumb">
+                  <input type="radio" name="gender" value="undefined">
+                  <img class="thumb" src="images/undefinedthumb.png" alt="undefine">
+                </label>
               </div>
+
+
 
               <label for="phoneNumber">Phone Number</label><br>
               <input id="phoneNumber" type="number"><br><br>
@@ -163,7 +184,6 @@
               <button id="submitAddress" class="btn btn-success" type="submit">Sign Up!</button>
             </form>
           </div>
-          here
         </div>
       </div>
     </div>
@@ -173,15 +193,58 @@
     </div>
 
     <div class="bgimg-1" id="guestPage">
-      <div class="caption">
-        <div class="border">
-          <h2>Guests:</h2>
-          <p>contact info</p>
-        </div>
-      <div id="busGuest">
-      </div>
-      </div>
-    </div>
+     <div class="caption">
+       <div class="border">
+         <h2>Guests:</h2>
+       </div>
+       <div class="container">
+         <div class="row">
+           <div class="col-md-3 well" id="guest1">
+
+           </div>
+           <div class="col-md-3 well" id="guest2">
+
+           </div>
+           <div class="col-md-3 well" id="guest3">
+
+           </div>
+           <div class="col-md-3 well" id="guest4">
+
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-md-3 well" id="guest5">
+
+           </div>
+           <div class="col-md-3 well" id="guest6">
+
+           </div>
+           <div class="col-md-3 well" id="guest7">
+
+           </div>
+           <div class="col-md-3 well"id="guest8">
+
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-md-3 well" id="guest9">
+
+           </div>
+           <div class="col-md-3 well" id="guest10">
+
+           </div>
+           <div class="col-md-3 well" id="guest11">
+
+           </div>
+           <div class="col-md-3 well" id="guest12">
+
+           </div>
+         </div>
+       </div>
+       <div id="busGuest">
+       </div>
+     </div>
+   </div>
 
     <div id="center" class="break">
       <h2>Contact US:</h2>

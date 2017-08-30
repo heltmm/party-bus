@@ -1,4 +1,3 @@
-
 ///BACK END
 
 var count = 1;
@@ -30,30 +29,39 @@ function toggleBounce() {
   }
 }
 // contact object paramaters
-function Contact(first, last, weekend, number, carrier){
+function Contact(first, last, weekend, number, carrier, activity, gender){
   this.firstName = first;
   this.lastName = last;
   this.weekend = weekend;
   this.number = number;
   this.carrier = carrier;
-  this.addresses = [];
+  this.activity = activity;
+  this.gender = gender;
+
 }
-function Address(street1, city1, state1){
-  this.street = street1;
-  this.city = city1;
-  this.state = state1;
-}
+
 Contact.prototype.firstAndLast = function () {
   return this.firstName + " "+this.lastName;
 };
 
-Contact.prototype.guestWell = function () {
-  return this.firstName + " "+this.lastName;
+Contact.prototype.guestPrint = function () {
+var emoji;
+  console.log(this.gender)
+  switch(this.gender) {
+    case "male":
+      emoji = '<img src="images/manpage.png" alt="person emji"><br>'
+      break;
+    case "female":
+      emoji = '<img src="images/womanpage.png" alt="person emji"><br>'
+      break;
+    case "undefined":
+      emoji = '<img src="images/unisex.png" alt="person emji"><br>'
+      break;
+  }
+  console.log(emoji);
+  return emoji + this.firstName + " "+this.lastName + "<br><ul><li>" + this.weekend +"</li><li>" + this.activity + "</li></ul>";
 }
 
-Address.prototype.fullAddress = function () {
-  return this.street+", " + this.city+ ", "+this.state;
-};
 function resetFields(){
   $("input#firstName").val("");
   $("input#lastName").val("");
@@ -119,28 +127,34 @@ $(document).ready(function() {
       var weekendInputted = $("#weekendInput").val();
       var phoneNumber = parseInt($("#phoneNumber").val());
       var carrier = $("#carrier").val();
-      var newContact = new Contact(firstNameInputted, lastNameInputted, weekendInputted, phoneNumber, carrier);
+      var activityInputted = $("#activity").val();
+      var gender = $("input:radio[name=gender]:checked").val();
 
-      $(".new-address").each(function (){
-        var streetInputted = $("#street").val();
-        var cityInputted = $("#city").val();
-        var stateInputted = $("#state").val();
-        var newAddress = new Address(streetInputted, cityInputted, stateInputted);
+      var newContact = new Contact(firstNameInputted, lastNameInputted, weekendInputted, phoneNumber, carrier, activityInputted, gender);
+      console.log(newContact)
 
-        newContact.addresses.push(newAddress);
+
+
+      console.log(gender)
+
+      var cityInputted = $("#city").val();
+      var stateInputted = $("#state").val();
+
+
+
         contacts.push(newContact);
 
         var message = firstNameInputted + " your Ski Trip Has Been Confirmed";
 
         email = phoneNumber + carrier;
+        $("#guest" + count).append("<div class='well'>"+ newContact.guestPrint() + "</div>")
 
-        $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
         progressBar();
         resetFields();
-        sendMail();
-        $("#busGuest").append("<div class='well'>"+ newContact.guestWell() + "</div>")
-      });
-    }else if(count > 12){
+        //sendMail();
+
+
+      }else if(count > 12){
       alert("Bus Is Full!");
     }
   });
