@@ -1,8 +1,8 @@
 
-
+/*
 body {
   background: linear-gradient(to right, #00d2ff, #928dab);
-}
+}*/
 
 .container-fluid {
   /*text-align: center;*/
@@ -75,18 +75,20 @@ body, html {
 .caption {
   position: absolute;
   left: 0;
-  top: 50%;
+  top: 10%;
   width: 100%;
   text-align: center;
   color: #000;
 }
 
-.caption span.border {
+.caption .border {
   background-color: #111;
   color: #fff;
   padding: 18px;
   font-size: 25px;
   letter-spacing: 10px;
+  margin:0 100px 0 100px;
+
 }
 
 h3 {
