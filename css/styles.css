@@ -127,5 +127,9 @@ h3 {
   height: 50vh;
   width: 100%;
   object-fit: cover;
-
 }
+#hero-vid {
+ height: 50vh;
+ width: 100%;
+ object-fit: cover;
+};
