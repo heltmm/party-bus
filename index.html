@@ -3,6 +3,7 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/scripts.js"></script>
 
@@ -10,20 +11,56 @@
   </head>
   <body>
       <!-- title jumbo -->
-      <div class="jumbotron">
+      <!-- <div class="jumbotron">
         <div class="row">
-          <div class="col-md-2">
-            <div id="busMeter">
-            </div>
-          </div>
-          <div class="col-md-10">
-            <h1>Meadows Snow Bus</h1>
-          </div>
+          <h1>Meadows Snow Bus</h1>
         </div>
-      </div>
+      </div> -->
       <!-- menu placeholder -->
-      <div id="menu">
-        <h3>Menu place holder</h3>
+      <div id="navBar" class="sticky-top">
+        <h1 id="header">The Powder Pony</h1>
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+          <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button> -->
+
+          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+
+          <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">The Bus</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#guestPage">Guests</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown link
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li> -->
+          </ul>
+      <!-- </div> -->
+        </nav>
       </div>
 <!-- rotating images -->
       <div id ="rotatingImages">
@@ -42,7 +79,7 @@
     <!-- guest page  -->
     <div class="bgimg-1">
       <div class="caption">
-      <span class="border">Guests</span>
+      <span class="border" id="guestPage">Guests</span>
       <div id="busGuest">
       </div>
       </div>

@@ -31,6 +31,7 @@ function toggleBounce() {
     marker.setAnimation(google.maps.Animation.BOUNCE);
   }
 }
+// contact object paramaters
 function Contact(first, last, weekend, number, carrier){
   this.firstName = first;
   this.lastName = last;
@@ -47,6 +48,11 @@ function Address(street1, city1, state1){
 Contact.prototype.firstAndLast = function () {
   return this.firstName + " "+this.lastName;
 };
+
+Contact.prototype.guestWell = function () {
+  return this.firstName + " "+this.lastName;
+}
+
 Address.prototype.fullAddress = function () {
   return this.street+", " + this.city+ ", "+this.state;
 };
@@ -129,7 +135,7 @@ $(document).ready(function() {
         progressBar();
         resetFields();
         //sendMail();
-        $("#busGuest").append("<div class='well'>"+ newContact.firstAndLast() + "</div>")
+        $("#busGuest").append("<div class='well'>"+ newContact.guestWell() + "</div>")
       });
     }else if(count > 12){
       alert("Bus Is Full!");
