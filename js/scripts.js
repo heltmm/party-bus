@@ -18,11 +18,9 @@ function initMap() {
     marker = new google.maps.Marker({
     position: meadows,
     map: map,
-    draggable: true,
-    animation: google.maps.Animation.DROP,
+    animation: google.maps.Animation.BOUNCE,
     icon: image,
   });
-  marker.addListener('click', toggleBounce);
 }
 function toggleBounce() {
   if (marker.getAnimation() !== null) {

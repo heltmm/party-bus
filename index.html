@@ -84,7 +84,11 @@
       <div class="caption">
         <div class="border">
           <h2>Where is the Bus:</h2>
-          <p>Mt. Hood you punk!</p>
+          <div id="map">
+          </div>
+          <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I&callback=initMap">
+            </script>
         </div>
       </div>
     </div>
@@ -93,12 +97,11 @@
       <h3 style="text-align:center;">Line Break</h3>
     </div>
     <!-- video -->
-    <div id="overlay">
+    <div id="video">
         <video class="visible-desktop" id="hero-vid" poster="" autoplay loop muted>
-            <source type="video/mp4" src="http://www.markhillard.com/sandbox/media/polina.mp4"></source>
+            <source type="video/mp4" src="https://static.videezy.com/system/resources/previews/000/002/454/original/out-of-the-box-hd-stock-video.mp4"></source>
         </video>
-      </div>
-
+    </div>
     <div style="color: #ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
       <h3 style="text-align:center;">Line Break</h3>
     </div>
@@ -122,7 +125,6 @@
           <h2>Sign Up:</h2>
           <div id="signUp">
             <form class="form-group" id="signUpForm">
-
               <select id="weekendInput">
                 <option value="0">Select A Date</option>
                 <option value="11/22">Weekend of 11/22</option>
@@ -251,12 +253,7 @@
       </div>
 
       <div id="mapAndWeather"
-        <h3>Mt.Hood Meadows</h3>
-        <div id="map">
-        </div>
-        <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I&callback=initMap">
-          </script>
+
 
         <!-- Weather Widget -->
         <link href="//www.snow-forecast.com/stylesheets/feed.css" media="screen" rel="stylesheet" type="text/css" /><div id="wf-weatherfeed"><iframe style="overflow:hidden;border:none;" allowtransparency="true" height="272" width="469" src="//www.snow-forecast.com/resorts/Mt-Hood-Meadows/forecasts/feed/mid/i" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"><p>Your browser does not support iframes.</p></iframe><div id="wf-link"><a href="http://www.snow-forecast.com/"><img alt="Snow Forecast" src="//www.snow-forecast.com/images/feed/snowlogo-150.png"/></a><p id="cmt">View detailed snow forecast for <a href="http://www.snow-forecast.com/resorts/Mt-Hood-Meadows/6day/mid">Mt Hood Meadows</a> at:<br /><a href="http://www.snow-forecast.com/"><strong>snow-forecast.com</strong></a></p><div style="clear: both;"></div></div></div>
