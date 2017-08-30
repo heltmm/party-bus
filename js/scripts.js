@@ -6,6 +6,7 @@ var count = 1;
 var contacts = [];
 
 //intializes google maps
+var marker;
 function initMap() {
   var meadows = {lat: 45.333067, lng: -121.655631};
 
@@ -13,12 +14,23 @@ function initMap() {
    zoom: 10,
    center: meadows
   });
-  var marker = new google.maps.Marker({
-   position: meadows,
-   map: map
+  var image = 'http://images.goodsam.com/goodsam.com/icon/campground/icon-big-rigs.png';
+    marker = new google.maps.Marker({
+    position: meadows,
+    map: map,
+    draggable: true,
+    animation: google.maps.Animation.DROP,
+    icon: image,
   });
+  marker.addListener('click', toggleBounce);
 }
-
+function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
 function Contact(first, last, weekend, number, carrier){
   this.firstName = first;
   this.lastName = last;
