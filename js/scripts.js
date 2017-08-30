@@ -128,7 +128,8 @@ $(document).ready(function() {
         $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
         progressBar();
         resetFields();
-        sendMail();
+        //sendMail();
+        $("#busGuest").append("<div class='well'>"+ newContact.firstAndLast() + "</div>")
       });
     }else if(count > 12){
       alert("Bus Is Full!");
