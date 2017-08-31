@@ -49,17 +49,17 @@ var emoji;
   console.log(this.gender)
   switch(this.gender) {
     case "male":
-      emoji = '<img src="images/manpage.png" alt="person emji"><br>'
+      emoji = '<img class="solid" src="images/manpage.png" alt="person emji"><br>'
       break;
     case "female":
-      emoji = '<img src="images/womanpage.png" alt="person emji"><br>'
+      emoji = '<img class="solid" src="images/womanpage.png" alt="person emji"><br>'
       break;
     case "undefined":
-      emoji = '<img src="images/unisex.png" alt="person emji"><br>'
+      emoji = '<img class="solid" src="images/unisex.png" alt="person emji"><br>'
       break;
   }
   console.log(emoji);
-  return emoji + this.firstName + " "+this.lastName + "<br><ul><li>" + this.weekend +"</li><li>" + this.activity + "</li></ul>";
+  return emoji + this.firstName + " "+this.lastName + "<br><h4>" + this.weekend +"</h4><h4>" + this.activity + "</h4>";
 }
 
 function resetFields(){
