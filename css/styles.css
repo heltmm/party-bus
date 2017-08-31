@@ -185,3 +185,13 @@ h3 {
 .solid{
   rgba:
 }
+
+#busMeter{
+  display: none;
+}
+.tiny {
+  width: 40px;
+}
+.emoji{
+  width: 180px;
+}
