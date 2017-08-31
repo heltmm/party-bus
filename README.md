@@ -14,11 +14,13 @@ _This webpage takes user input and creates a pizza object which then calls a pro
 | Take user input and make a pizza object   | size = large, crust = thin crust, sauce = red, toppings = onion, olive                        | pizza{ size= "large"; crust = "thin crust"; sauce= "red"; toppings=["onion","olive"]; price; }        |
 | Determine price based on pizza parameters | pizza {size= "large"; crust = "thin crust"; sauce= "red"; toppings=["onion","olive"]; price;} | pizza{ size= "large"; crust = "thin crust"; sauce= "red"; toppings=["onion","olive"]; price = 8.99; } |
 | Add pizza to a cart object                | pizza1                                                                                        | Cart{ pizzas = [pizza1]; total; }                                                                     |
-| Determine total base on cart parameters   | Cart                                                                                          | Cart{ pizzas =[pizza1]; total = 8.99; }                                                               |## Setup
+| Determine total base on cart parameters   | Cart                                                                                          | Cart{ pizzas =[pizza1]; total = 8.99; }                                                               |
+
+## Setup
 
 * _Open Web Browser._
-* _type https://heltmm.github.io/pizza-builder into url bar._
-* _Or click this link: [Pizza Builder](https://heltmm.github.io/pizza-builder)_
+* _type https://heltmm.github.io/ping-pong into url bar._
+* _Or click this link: [Ping Pong](https://heltmm.github.io/ping-pong)_
 
 ## Known Bugs
 
