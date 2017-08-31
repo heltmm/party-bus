@@ -145,7 +145,8 @@ h3 {
 #hero-vid {
  height: 70vh;
  width: 100%;
- object-fit: fill;
+ object-fit: contain;
+ clip: rect(100px 0 100px 0)
 }
 
 .hbar {
@@ -202,4 +203,7 @@ h3 {
 
 .emoji{
   width: 180px;
+}
+#fire img, #fire2 img {
+  width: 30px;
 }

@@ -3,6 +3,7 @@
 var count = 1;
 
 var contacts = [];
+var numbers = [];
 
 //intializes google maps
 var marker;
@@ -37,6 +38,7 @@ function Contact(first, last, weekend, number, carrier, activity, gender){
   this.carrier = carrier;
   this.activity = activity;
   this.gender = gender;
+  this.sendText = number + carrier;
 
 }
 
@@ -70,6 +72,19 @@ var activity;
   }
   return emoji + this.firstName + " "+this.lastName + "<br><p>" + this.weekend + activity + "</p>";
 }
+Contact.prototype.sendMail = function () {
+  if(count < 12){
+
+    window.location.href = 'mailto:' + this.sendText + '?subject=Ski Confirmation' + '&body=' + message;
+    numbers.push(this.sendText);
+    console.log(numbers);
+    alert();
+  }else if(count === 12) {
+    window.location.href = 'mailto:' + numbers + '?subject=Ski Confirmation' + '&body= The Bus is full! Get Ready!' ;
+  }
+}
+
+
 
 function resetFields(){
   $("input#firstName").val("");
@@ -87,22 +102,25 @@ function progressBar(){
   '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + progress + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
   '</div>');
   if (count > 11){
+
+    $("#fire2").html('<img src="images/fire.png" alt=""><img src="images/fire.png" alt=""><img src="images/fire.png" alt=""><img src="images/fire.png" alt="">')
     $(".updatedBar").html('<div class="progress">' +
     '<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 100%; height: 30px;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">FULL BUSS. LESSSSS GOOOOOO</div>' +
     '</div>')
-    $("#fire").html('<div id="inALine"><p><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""><img src="img/fire.png" alt=""></p></div>')
+    $("#fire").html('<img src="images/fire.png" alt=""><img src="images/fire.png" alt=""><img src="images/fire.png" alt=""><img src="images/fire.png" alt="">')
   }
   count ++;
 }
-var phoneNumber;
-var carrier;
-var message;
-
-var email = phoneNumber + carrier;
-
-function sendMail() {
-  window.location.href = 'mailto:' + email + '?subject=Ski Confirmation' + '&body=' + message;
-}
+// var phoneNumber;
+// var carrier;
+// var message;
+//
+// var email = phoneNumber + carrier;
+//
+//
+// function sendMail() {
+//   window.location.href = 'mailto:' + email + '?subject=Ski Confirmation' + '&body=' + message;
+// }
 function weekendDisplay(weekendInputted){
   if (weekendInputted === "11/22") {
     $("#trip-info h3").text("Mt Hood - November 22 - November 24");
@@ -145,18 +163,20 @@ $(document).ready(function() {
 
       contacts.push(newContact);
 
-      var message = firstNameInputted + " your Ski Trip Has Been Confirmed";
+      message = firstNameInputted + " your Ski Trip Has Been Confirmed";
 
       email = phoneNumber + carrier;
       $("#guest" + count).append("<div class='well'>"+ newContact.guestPrint() + "</div>")
 
       progressBar();
       resetFields();
-      sendMail();
+      // sendMail();
+      newContact.sendMail();
 
 
       }else if(count > 12){
       alert("Bus Is Full!");
+
     }
   });
   $("#weekendInput").change(function(){
