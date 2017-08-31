@@ -98,7 +98,13 @@
     </div>
 
     <div class="break">
-      <h3 style="text-align:center;">Line Break</h3>
+      <h1>Current Weather</h1>
+      <br>
+      <link href="//www.snow-forecast.com/stylesheets/feed.css" media="screen" rel="stylesheet" type="text/css" />
+        <div id="wf-weatherfeed">
+          <iframe style="overflow:hidden;border:none;" allowtransparency="true" height="272" width="469" src="//www.snow-forecast.com/resorts/Mt-Hood-Meadows/forecasts/feed/mid/i" scrolling="no">
+          </iframe>
+        </div>
     </div>
     <!-- video -->
     <video id="hero-vid" autoplay loop muted>
@@ -184,6 +190,20 @@
 
               <button id="submitAddress" class="btn btn-success" type="submit">Sign Up!</button>
             </form>
+            <div id="payment">
+              <form action="/your-server-side-code" method="POST">
+              <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+                data-amount="999"
+                data-name="Stripe.com"
+                data-description="Widget"
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto"
+                data-zip-code="true">
+              </script>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -194,59 +214,59 @@
     </div>
 
     <div class="bgimg-1" id="guestPage">
-     <div class="caption">
-       <div class="border" id="solid">
-         <h2>Guests:</h2>
+      <div class="caption">
+        <div class="border" id="solid">
+          <h2>Guests:</h2>
 
-         <div class="container">
-           <div class="row">
-             <div class="col-md-3 well" id="guest1">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 well" id="guest1">
 
-             </div>
-             <div class="col-md-3 well" id="guest2">
+              </div>
+              <div class="col-md-3 well" id="guest2">
 
-             </div>
-             <div class="col-md-3 well" id="guest3">
+              </div>
+              <div class="col-md-3 well" id="guest3">
 
-             </div>
-             <div class="col-md-3 well" id="guest4">
+              </div>
+              <div class="col-md-3 well" id="guest4">
 
-             </div>
-           </div>
-           <div class="row">
-             <div class="col-md-3 well" id="guest5">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 well" id="guest5">
 
-             </div>
-             <div class="col-md-3 well" id="guest6">
+              </div>
+              <div class="col-md-3 well" id="guest6">
 
-             </div>
-             <div class="col-md-3 well" id="guest7">
+              </div>
+              <div class="col-md-3 well" id="guest7">
 
-             </div>
-             <div class="col-md-3 well" id="guest8">
+              </div>
+              <div class="col-md-3 well" id="guest8">
 
-             </div>
-           </div>
-           <div class="row">
-             <div class="col-md-3 well" id="guest9">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 well" id="guest9">
 
-             </div>
-             <div class="col-md-3 well" id="guest10">
+              </div>
+              <div class="col-md-3 well" id="guest10">
 
-             </div>
-             <div class="col-md-3 well" id="guest11">
+              </div>
+              <div class="col-md-3 well" id="guest11">
 
-             </div>
-             <div class="col-md-3 well" id="guest12">
+              </div>
+              <div class="col-md-3 well" id="guest12">
 
-             </div>
-           </div>
-         </div>
-       </div>
-       <div id="busGuest">
-       </div>
-     </div>
-   </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="busGuest">
+        </div>
+      </div>
+    </div>
 
     <div id="center" class="break">
       <h2>Contact US:</h2>
@@ -257,59 +277,7 @@
     <div class="hbar hbar2">
       <h1>APPEARED ON:</h1>
       <img src="http://www.letsbenomads.com/wp-content/uploads/2014/03/banner-media-2.png?x39278" alt="Appeared On">
-  </div>
-    <!-- <div class="container-fluid"> -->
-    <br><br>
-
-
-
-
-
-
-      <div class="well">
-        <h3>About</h3>
-        <p>Cupim kevin salami ham, venison short loin meatball corned beef biltong pork sausage jowl chuck jerky doner. Fatback meatball picanha pancetta hamburger pork belly. Ball tip tail venison cow frankfurter landjaeger sausage ribeye short ribs. Burgdoggen ball tip swine pig brisket. Rump porchetta sausage chicken, bresaola tail meatball pork belly turducken pork shankle burgdoggen.</p>
-      </div>
-
-      <!-- <div class="well" id="trip-info">
-        <h3></h3>
-        <p></p>
-      </div> -->
-
-      <div class="well">
-        <h3>Bus Meter</h3>
-        <div class="updatedBar">
-        </div>
-        <!-- <span id="fire"></span> -->
-      </div>
-
-      <div id="mapAndWeather">
-
-
-        <!-- weaterh -->
-
-        <link href="//www.snow-forecast.com/stylesheets/feed.css" media="screen" rel="stylesheet" type="text/css" /><div id="wf-weatherfeed"><iframe style="overflow:hidden;border:none;" allowtransparency="true" height="272" width="469" src="//www.snow-forecast.com/resorts/Mt-Hood-Meadows/forecasts/feed/mid/i" scrolling="no" frameborder="0" marginwidth="0" marginheight="0">
-      </div>
-
-
-
-      <div id="payment">
-        <form action="/your-server-side-code" method="POST">
-        <script
-          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-          data-amount="999"
-          data-name="Stripe.com"
-          data-description="Widget"
-          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-          data-locale="auto"
-          data-zip-code="true">
-        </script>
-        </form>
-      </div>
-
-
-    <!-- </div> -->
+    </div>
     </div>
   </body>
 </html>
