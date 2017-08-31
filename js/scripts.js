@@ -151,7 +151,7 @@ $(document).ready(function() {
 
         progressBar();
         resetFields();
-        //sendMail();
+        sendMail();
 
 
       }else if(count > 12){
