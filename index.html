@@ -123,9 +123,8 @@
 
     <div class="bgimg-1" id="sineupPage">
       <div class="caption">
-
         <div class="border">
-          <div class="well">
+          <div class="well" id="busMeter" >
             <h3>Bus Meter</h3>
             <div class="updatedBar">
             </div>
@@ -134,8 +133,9 @@
           <h2>Sign Up:</h2>
           <div id="signUp">
             <form class="form-group" id="signUpForm">
+
+              <label>Select a Date:</label><br>
               <select id="weekendInput">
-                <option value="0">Select A Date</option>
                 <option value="11/22">Weekend of 11/22</option>
                 <option value="12/12">Weekend of 12/12</option>
                 <option value="1/4">Weekend of 1/4</option>
@@ -148,24 +148,32 @@
               <label for="lastName">Last Name</label><br>
               <input id="lastName" type="text"><br>
 
+              <label>Activity</label><br>
+              <select id="activityInput">
+                <option value="ski">Ski</option>
+                <option value="snowboard">Snowboard</option>
+              </select><br>
 
-              <label for="activity">Ski/Snowboard</label><br>
-              <input id="activity" type="text"><br>
 
               <div class="radio">
                 <label class="inline-radio">
+
                   <input type="radio" name="gender" value="male" checked>
                   <img class="thumb" src="images/malethumb.png" alt="male">
+                  <h4>Male</h4>
                 </label>
 
                 <label class="inline-radio">
+
                   <input type="radio" name="gender" value="female">
                   <img class="thumb" src="images/femalethumb.png" alt="female">
+                  <h4>Female</h4>
                 </label>
 
                 <label class="inline-radio thumb">
                   <input type="radio" name="gender" value="undefined">
                   <img class="thumb" src="images/undefinedthumb.png" alt="undefine">
+                  <h4>Neutral</h4>
                 </label>
               </div>
 

@@ -46,20 +46,29 @@ Contact.prototype.firstAndLast = function () {
 
 Contact.prototype.guestPrint = function () {
 var emoji;
+var activity;
+
   console.log(this.gender)
   switch(this.gender) {
     case "male":
-      emoji = '<img class="solid" src="images/manpage.png" alt="person emji"><br>'
+      emoji = '<img class="emoji" src="images/manpage.png" alt="person emji"><br>'
       break;
     case "female":
-      emoji = '<img class="solid" src="images/womanpage.png" alt="person emji"><br>'
+      emoji = '<img class="emoji" src="images/womanpage.png" alt="person emji"><br>'
       break;
     case "undefined":
-      emoji = '<img class="solid" src="images/unisex.png" alt="person emji"><br>'
+      emoji = '<img class="emoji" src="images/unisex.png" alt="person emji"><br>'
       break;
   }
-  console.log(emoji);
-  return emoji + this.firstName + " "+this.lastName + "<br><h4>" + this.weekend +"</h4><h4>" + this.activity + "</h4>";
+  switch(this.activity) {
+    case "ski":
+      activity = '<img class="tiny" src="images/ski.png" alt="person emji"><br>'
+      break;
+    case "snowboard":
+      activity = '<img class="tiny" src="images/snowboard.png" alt="person emji"><br>'
+      break;
+  }
+  return emoji + this.firstName + " "+this.lastName + "<br><p>" + this.weekend + activity + "</p>";
 }
 
 function resetFields(){
@@ -72,6 +81,7 @@ function resetFields(){
 }
 function progressBar(){
   var progress = count * (100/12);
+  $("#busMeter").show();
   $(".updatedBar").html('<div class="progress">' +
 
   '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ' + progress + '%; height: 30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>' +
@@ -127,31 +137,22 @@ $(document).ready(function() {
       var weekendInputted = $("#weekendInput").val();
       var phoneNumber = parseInt($("#phoneNumber").val());
       var carrier = $("#carrier").val();
-      var activityInputted = $("#activity").val();
+      var activityInputted = $("#activityInput").val();
       var gender = $("input:radio[name=gender]:checked").val();
 
       var newContact = new Contact(firstNameInputted, lastNameInputted, weekendInputted, phoneNumber, carrier, activityInputted, gender);
-      console.log(newContact)
 
 
+      contacts.push(newContact);
 
-      console.log(gender)
+      var message = firstNameInputted + " your Ski Trip Has Been Confirmed";
 
-      var cityInputted = $("#city").val();
-      var stateInputted = $("#state").val();
+      email = phoneNumber + carrier;
+      $("#guest" + count).append("<div class='well'>"+ newContact.guestPrint() + "</div>")
 
-
-
-        contacts.push(newContact);
-
-        var message = firstNameInputted + " your Ski Trip Has Been Confirmed";
-
-        email = phoneNumber + carrier;
-        $("#guest" + count).append("<div class='well'>"+ newContact.guestPrint() + "</div>")
-
-        progressBar();
-        resetFields();
-        sendMail();
+      progressBar();
+      resetFields();
+      sendMail();
 
 
       }else if(count > 12){
