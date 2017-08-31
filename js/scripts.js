@@ -78,8 +78,12 @@ Contact.prototype.sendMail = function () {
     window.location.href = 'mailto:' + this.sendText + '?subject=Ski Confirmation' + '&body=' + message;
     numbers.push(this.sendText);
     console.log(numbers);
-    alert();
+
   }else if(count === 12) {
+    console.log(numbers)
+    numbers = numbers.join();
+    console.log(numbers)
+    alert()
     window.location.href = 'mailto:' + numbers + '?subject=Ski Confirmation' + '&body= The Bus is full! Get Ready!' ;
   }
 }

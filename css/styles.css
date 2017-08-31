@@ -145,7 +145,7 @@ h3 {
 #hero-vid {
  height: 70vh;
  width: 100%;
- object-fit: contain;
+ object-fit: fill;
 }
 
 .hbar {
@@ -205,4 +205,8 @@ h3 {
 }
 #fire img, #fire2 img {
   width: 30px;
+}
+
+video {
+  margin-bottom: -10px;
 }
