@@ -63,10 +63,12 @@ body, html {
   background-image: url("../images/snow-road.jpg");
   padding: 5% 0 5% 0;
 }
+
 #sineupPage {
   background-image: url("../images/sign-up.jpg");
   padding: 5% 0 5% 0;
 }
+
 #guestPage {
   background-image: url("../images/friends.jpg");
   padding: 5% 0 5% 0;
@@ -98,7 +100,6 @@ body, html {
   margin:0 100px 0 100px;
   background-color: rgba(0,0,0,.5);
   /*opacity: 0.8;*/
-
 }
 
 h3 {
@@ -107,12 +108,12 @@ h3 {
   font: 20px "Lato", sans-serif;
   color: #ddd;
 }
+
 .navbar {
   margin: 30px;
   background: white;
   border: none;
   font-family: courier;
-
 }
 
 .nav{
@@ -130,19 +131,22 @@ h3 {
   font-size: 60px;
   padding-top: 30px;
 }
+
 #navBar {
   background: white;
 }
+
 .carousel img {
   height: 50vh;
   width: 100%;
   object-fit: cover;
 }
+
 #hero-vid {
  height: 70vh;
  width: 100%;
  object-fit: fill;
-};
+}
 
 .hbar {
   font-family: courier;
@@ -152,7 +156,6 @@ h3 {
 
 .hbar h1 {
   padding-top: 50px;
-
 }
 
 .hbar img {
@@ -170,28 +173,33 @@ h3 {
   background-color: #325a73;
   text-align: center;
 }
+
 .break {
   color: #ddd;
   background-color: #282E34;
   padding: 50px 80px;
   text-align: center;
 }
+
 @media (min-width: 1200px) {
   .container {
     width: 95%;
     max-width: 100%;
   }
 }
-.solid{
-  rgba:
+
+#fivestars {
+  width: 250px;
 }
 
 #busMeter{
   display: none;
 }
+
 .tiny {
   width: 40px;
 }
+
 .emoji{
   width: 180px;
 }
