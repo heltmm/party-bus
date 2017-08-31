@@ -9,13 +9,14 @@
 _This is a booking webpage for a 12 person sleeper bus that takes weekend trips up to Mt. Hood for the ski season._
 
 ## Specs
-| **Specification**                         | **Input**                                                                                     | **Output**                                                                                            |
-|-------------------------------------------|-----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| Take user input and make a pizza object   | size = large, crust = thin crust, sauce = red, toppings = onion, olive                        | pizza{ size= "large"; crust = "thin crust"; sauce= "red"; toppings=["onion","olive"]; price; }        |
-| Determine price based on pizza parameters | pizza {size= "large"; crust = "thin crust"; sauce= "red"; toppings=["onion","olive"]; price;} | pizza{ size= "large"; crust = "thin crust"; sauce= "red"; toppings=["onion","olive"]; price = 8.99; } |
-| Add pizza to a cart object                | pizza1                                                                                        | Cart{ pizzas = [pizza1]; total; }                                                                     |
-| Determine total base on cart parameters   | Cart                                                                                          | Cart{ pizzas =[pizza1]; total = 8.99; }                                                               |
-
+| **Specification**                          | **Input**                                              | **Output**                                                                  |
+|--------------------------------------------|--------------------------------------------------------|-----------------------------------------------------------------------------|
+| display webpage                            |  type https://heltmm.github.io/party-bus/ into browser | open The Powder Pony webpage                                                |
+| display slideshow of images                | 3 image files                                          | rotate through each image file and display it on the page                   |
+| display map of bus location                | latitude and longitude coordinates                     | bouncing bus icon at those coordinates on a map                             |
+| display video                              | .mp4 video file                                        | display video on webpage                                                    |
+| sign up form to create guest and send text | date, gender, activity                                 | display date, gender emoji, activity emoji on guest page for each submit    |
+| bust meter                                 | submit                                                 | but meter moves 8.3333 percent every submit until the meter and bus is full |
 ## Setup
 
 * _Open Web Browser._
